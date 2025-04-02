@@ -4,7 +4,7 @@ This is a code that prints the "12 days of Christmas" song and matches student s
 use std::io;
 
 fn main() {
-//Printsthe song "12 days of Christmas"
+//Prints the song "12 days of Christmas"
     let gifts = ["A partridge in a pear tree", "Two turtle-doves", "Three french hens", "Four calling birds", "Five gold rings", "Six geese a laying", "Seven swans a swimming", "Eight maids a milking", "Nine ladies dancing", "Ten lords a leaping", "Eleven pipers piping", "Twelve drummers drumming"];
     for day in 0..12{
         println!("On the {} day of christmas, my true love gave to me",
