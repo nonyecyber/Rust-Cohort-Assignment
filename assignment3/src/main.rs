@@ -1,6 +1,10 @@
+/*----------------------------------------------
+This is a code that prints the "12 days of Christmas" song and matches student score with grades
+-----------------------------------------*/
 use std::io;
 
 fn main() {
+//Printsthe song "12 days of Christmas"
     let gifts = ["A partridge in a pear tree", "Two turtle-doves", "Three french hens", "Four calling birds", "Five gold rings", "Six geese a laying", "Seven swans a swimming", "Eight maids a milking", "Nine ladies dancing", "Ten lords a leaping", "Eleven pipers piping", "Twelve drummers drumming"];
     for day in 0..12{
         println!("On the {} day of christmas, my true love gave to me",
@@ -28,8 +32,9 @@ fn main() {
     }
     println!();
     }
+//Calculates grades of students
     println!("Let us calculate grades!");
-
+//Gets the number of students
     let num_students = loop {
         println!("How many students? (minmum of 10) ");
         let mut input = String::new();
@@ -41,6 +46,7 @@ fn main() {
         Err(_) => println!("Please enter a valid number"),
     }
     };
+//Gets name of students
     for i in 1..=num_students {
         println!("Student {}", i);
         println!("Enter student's name:");
@@ -48,20 +54,20 @@ fn main() {
         io::stdin().read_line(&mut name)
         .expect("Failed to read name");
     let name = name.trim().to_string();
-
+//Gets score for each student
     let score = loop {
         println!("Enter score (0-100) for {}:", name);
         let mut input = String::new();
         io::stdin().read_line(&mut input)
         .expect("Failed to read score");
-
+//Checks if score is greater than 10
     match input.trim().parse::<f32>() {
         Ok(s) if s >= 0.0 && s <= 100.0 => break s,
         Ok(_) => println!("Score must be beyween 0 and 100"),
         Err(_) => println!("Please enter a valid number"),
     }
     };
-
+//Assigns grades to ranges of scores
     let grade = if score >= 80.0 {
         "A"
     } else if score >= 70.0 {
@@ -73,7 +79,7 @@ fn main() {
     } else {
         "F"
     };
-    
+    //Prints grades of students
     println!("{}'s score: {:.1} - Grade: {}", name, score, grade);
     }
 }
