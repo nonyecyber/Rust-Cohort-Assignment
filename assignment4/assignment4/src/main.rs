@@ -1,6 +1,6 @@
 /*---------------------------------------------
 This code prints the "12 days of Christmas" song
-----------------------------------------------*
+---------------------------------------------*/
 fn main() {
     let gifts = ["A partridge in a pear tree", "Two turtle-doves", "Three french hens", "Four calling birds", "Five gold rings", "Six geese a laying", "Seven swans a swimming", "Eight maids a milking", "Nine ladies dancing", "Ten lords a leaping", "Eleven pipers piping", "Twelve drummers drumming"];
     for day in 0..12{
